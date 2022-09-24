@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="français">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Karin's French article test</title>
+	<link rel="stylesheet" href="./static/style.css" />
+	<link rel="icon" type="image/x-icon" href="./static/images/flag.png">
+	
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+	<p class="text-center">
+			<span style="white-space: nowrap">
+				<a class="btn btn-light" href="/"> Home </a> 
+				<a class="btn btn-light" href="gallery.html"> Gallery </a> 
+				<a class="btn btn-light" href="resume.html"> Resume </a> 
+				
+				<select class="form-select align-middle" style="width:auto;" onchange="location = this.value;">
+				<option value="/">Python Projects</option>
+				<option value="french.html">French Test</option>
+			  	<option value="gridder.html">Grid Maker</option>
+				<option value="boggle.html">Boggle</option>
+				</select>
+			</span>
+		</p>
+
+
+
+
+	<div class="p-3 mb-2 bg-dark text-white">
+		<div class=container-fluid>
+		
+
+	<p><h3>Choisissez-vous le sexe du substantifs en français...</h3></p>
+
+	<p><h1>English: {{ English }}</h1></p>
+
+
+
+	<script language="javascript">
+		var x = {{ Article|tojson }}
+		function feminine() {
+			if ( x == 'la') {
+				location.reload();
+			}
+		}
+		function masculine() {
+			if ( x == 'le') {
+				location.reload();	
+			}
+		}
+	</script>
+
+
+	<button type="button" class="btn btn-light" onClick="masculine()">Masculine</button>
+	ou
+	<button type="button" class="btn btn-light" onClick="feminine()">Feminine</button>
+
+
+	<p><h1>French: {{ French }}</h1></p>
+
+
+</div></div>
+
+
+<div class="fixed-bottom p-3 mb-2 bg-dark text-white"> 
+			<p class="text-center">
+			Contact: karinlouzada AT gmail DOT com
+			<!-- flaticon.com -->
+				<a href="https://github.com/karinlouzada" class="link-primary">
+				<img src="./static/images/github-logo.png" class="img-thumbnail" height=40 width=40></a>
+				<a href="https://www.linkedin.com/in/karin-louzada-32774816/" class="link-primary">
+				<img src="./static/images/linkedin.png" class="img-thumbnail" height=40 width=40></a>
+				<a href="https://www.instagram.com/louzadaat6352ft/" class="link-primary">
+				<img src="./static/images/instagram.png" class="img-thumbnail" height=40 width=40></a>
+			</p>
+		</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
