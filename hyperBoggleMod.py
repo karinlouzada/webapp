@@ -129,7 +129,7 @@ def score(words):
 
 # open and read dictionary:
 def dictio():
-    f = open('en_US_KLL.dic', 'r')
+    f = open('./static/en_US_KLL.dic', 'r')
     x = f.readlines()
     f.close()
     for i in range(len(x)):
