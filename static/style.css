@@ -1,0 +1,18 @@
+
+
+p {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
+
+
+body {
+ background-image: url("./images/eiffel.jpg");
+ background-color: black;
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ font-family: sans-serif;
+}
+
+select.form-select{display:inline-block}
