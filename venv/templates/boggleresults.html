@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="français">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Karin's index page</title>
+    <link rel="stylesheet" href="./static/style.css" />
+    <link rel="icon" type="image/x-icon" href="./static/images/flag.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- <script language="javascript" type="text/javascript" src="/static/scripts.js"></script> -->
+
+    <style>
+        th,
+        td {
+            border: 1px solid white;
+            border-radius: 10px;
+            border-style: outline;
+        }
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="text-center">
+        <span style="white-space: nowrap">
+            <a class="btn btn-light" href="/"> Home </a>
+            <a class="btn btn-light" href="gallery.html"> Gallery </a>
+            <a class="btn btn-light" href="resume.html"> Resume </a>
+
+            <select class="form-select align-middle" style="width:auto;" onchange="location = this.value;">
+                <option value="/">Python Projects</option>
+                <option value="french.html">French Test</option>
+                <option value="gridder.html">Grid Maker</option>
+                <option value="boggle.html">Boggle</option>
+            </select>
+        </span>
+    </p>
+
+    <div>
+        <table class="table-hover text-center center" width="100">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td id="D0">{{ letters[0] }}</td>
+                    <td id="D1">{{ letters[1] }}</td>
+                    <td id="D2">{{ letters[2] }}</td>
+                    <td id="D3">{{ letters[3] }}</td>
+                </tr>
+                <tr>
+                    <td id="D4">{{ letters[4] }}</td>
+                    <td id="D5">{{ letters[5] }}</td>
+                    <td id="D6">{{ letters[6] }}</td>
+                    <td id="D7">{{ letters[7] }}</td>
+                </tr>
+                <tr>
+                    <td id="D8">{{ letters[8] }}</td>
+                    <td id="D9">{{ letters[9] }}</td>
+                    <td id="D10">{{ letters[10] }}</td>
+                    <td id="D11">{{ letters[11] }}</td>
+                </tr>
+                <tr>
+                    <td id="D12">{{ letters[12] }}</td>
+                    <td id="D13">{{ letters[13] }}</td>
+                    <td id="D14">{{ letters[14] }}</td>
+                    <td id="D15">{{ letters[15] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br>
+
+
+    <div>
+        <center>
+            <h4>You entered the following words: </h4>
+            <table>
+                <tr id="myList" style="color:green"></tr>
+                <tr id="myList2" style="color:red"></tr>
+            </table>
+        </center>
+    </div><br>
+
+    <div>
+        <center>
+            <h2>Congratulations! You're score is: {{score1}}!</h2>
+        </center>
+    </div>
+
+
+
+    <div class=" fixed-bottom p-3 mb-2 bg-dark text-white">
+        <p class="text-center">
+            Contact: karinlouzada AT gmail DOT com
+            <!-- flaticon.com -->
+            <a href="https://github.com/karinlouzada" class="link-primary">
+                <img src="./static/images/github-logo.png" class="img-thumbnail" height=40 width=40></a>
+            <a href="https://www.linkedin.com/in/karin-louzada-32774816/" class="link-primary">
+                <img src="./static/images/linkedin.png" class="img-thumbnail" height=40 width=40></a>
+            <a href="https://www.instagram.com/louzadaat6352ft/" class="link-primary">
+                <img src="./static/images/instagram.png" class="img-thumbnail" height=40 width=40></a>
+        </p>
+    </div>
+
+    <script>
+        let data = {{ words | tojson }};
+        let list = document.getElementById("myList");
+        data.forEach((item) => {
+            let li = document.createElement("tr");
+            li.innerText = item;
+            list.appendChild(li);
+        });
+    </script>
+    <script>
+        let list2 = document.getElementById("myList2");
+        let inc = {{ incorrect | tojson }};
+        inc.forEach((item) => {
+            let li = document.createElement("tr");
+            li.innerText = item;
+            list2.appendChild(li);
+        });
+    </script>
+
+
+
+
+    <script>
+        let score = {{ score1 | tojson }};
+        document.createElement("tr").innerHTML
+
+    </script>
+
+
+    <script>
+        src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity = "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin = "anonymous"
+    </script>
+
+</body>
+
+</html>
