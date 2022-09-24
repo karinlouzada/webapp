@@ -13,7 +13,7 @@ def select_random_word():
     French = []
     article = []
     THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-    my_file = os.path.join(THIS_FOLDER, 'french_nouns_final.csv')
+    my_file = os.path.join(THIS_FOLDER, './static/french_nouns_final.csv')
 
     words = []
     with open(my_file, 'r', newline='') as csvfile:
